@@ -23,8 +23,10 @@ def game_hash
     [1, 19, 26, 12, 6, 3, 8, 5], 
     [31, 15, 19, 2, 2, 4, 11, 1] 
   ]
+  
   game[:home][:team_name] = "Brooklyn Nets"
   game[:home][:colors] = ["Black", "White"]
+  
   home_name.zip(home_info).each do |name, info|
     game[:home][:players].merge!({
       name => {
@@ -48,9 +50,13 @@ def game_hash
       [8, 15, 33, 3, 2, 1, 1, 0],
       [33, 15, 6, 12, 12, 22, 5, 12]
     ]
+    
     game[:away][:team_name] = "Charlotte Hornets"
     game[:away][:colors] = ["Turquoise", "Purple"]
+    
     away_name.zip(away_info).each do |name, info|
+  
+  
     game[:away][:players].merge!({
       name => {
         :number => info[0],
