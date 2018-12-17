@@ -78,7 +78,7 @@ def num_points_scored(player)
   
   hash.each do |key, value|
     if key == player
-      return key[:points]
+      return hash[key][:points]
     end
   end
 end
