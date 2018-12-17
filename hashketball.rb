@@ -74,11 +74,11 @@ def game_hash
 end
 
 def num_points_scored(player)
-  hash = game_hash
+  hash = all_players
   
-  hash.each do |h_a, v|
-    if v[:players].key?(player)
-      return v[:players][player][:points]
+  hash.each do |key, value|
+    if key == player
+      return key[:points]
     end
   end
 end
@@ -156,5 +156,7 @@ def big_shoe_rebounds
   end
 end
 
-
+def all_players
+  game[:home][:players].merge(game[:away][:players])
+end
 
